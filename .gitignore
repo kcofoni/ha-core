@@ -1,8 +1,8 @@
 /config/*
 !/config/custom_components/
 
-/config
-config2/*
+# Claude Code conversation history (persisted via symlink to workspace volume)
+/.claude/
 
 tests/testing_config/deps
 tests/testing_config/home-assistant.log*

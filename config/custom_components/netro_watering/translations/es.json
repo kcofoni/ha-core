@@ -1,0 +1,297 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "El dispositivo ya está configurado"
+    },
+    "error": {
+      "cannot_connect": "No se puede conectar al dispositivo",
+      "invalid_serial_number": "Número de serie inválido",
+      "netro_error_occurred": "Netro (NPA) devolvió un error para este número de serie",
+      "unknown": "Error inesperado",
+      "unknown_device_type": "Tipo de dispositivo desconocido"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "device_name": "Nombre del dispositivo",
+          "device_type": "Tipo de dispositivo",
+          "serial_number": "Número de serie del dispositivo"
+        },
+        "data_description": {
+          "device_name": "Un nombre opcional para su dispositivo",
+          "device_type": "El tipo de su dispositivo (p. ej., 'Controlador de riego', 'Sensor de suelo')",
+          "serial_number": "Puede encontrar el número de serie en el dispositivo o en la aplicación Netro"
+        },
+        "description": "Introduzca el número de serie de su dispositivo",
+        "title": "Configurar Netro"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "iswatering": {
+        "name": "¿Se está regando?",
+        "state": {
+          "off": "apagado",
+          "on": "encendido"
+        }
+      }
+    },
+    "button": {
+      "refresh": {
+        "name": "Actualizar"
+      }
+    },
+    "calendar": {
+      "schedules": {
+        "name": "Riego"
+      }
+    },
+    "sensor": {
+      "battery_percent": {
+        "name": "Batería"
+      },
+      "humidity": {
+        "name": "Humedad"
+      },
+      "illuminance": {
+        "name": "Iluminancia"
+      },
+      "last_watering_end_datetime": {
+        "name": "Fin del último riego"
+      },
+      "last_watering_source": {
+        "name": "Fuente del último riego",
+        "state": {
+          "fix": "Programado",
+          "manual": "Manual",
+          "none": "Desconocido",
+          "smart": "Inteligente"
+        }
+      },
+      "last_watering_start_datetime": {
+        "name": "Inicio del último riego"
+      },
+      "last_watering_status": {
+        "name": "Estado del último riego",
+        "state": {
+          "executed": "Ejecutado",
+          "executing": "Ejecutando",
+          "none": "Desconocido",
+          "valid": "Planificado"
+        }
+      },
+      "next_watering_end_datetime": {
+        "name": "Fin del próximo riego"
+      },
+      "next_watering_source": {
+        "name": "Fuente del próximo riego",
+        "state": {
+          "fix": "Programado",
+          "manual": "Manual",
+          "none": "Desconocido",
+          "smart": "Inteligente"
+        }
+      },
+      "next_watering_start_datetime": {
+        "name": "Inicio del próximo riego"
+      },
+      "next_watering_status": {
+        "name": "Estado del próximo riego",
+        "state": {
+          "executed": "Ejecutado",
+          "executing": "Ejecutando",
+          "none": "Desconocido",
+          "valid": "Planificado"
+        }
+      },
+      "status": {
+        "name": "Estado",
+        "state": {
+          "offline": "Desconectado",
+          "online": "Conectado",
+          "poweroff": "Apagado",
+          "setup": "Configuración",
+          "sleeping": "Durmiendo",
+          "standby": "En espera",
+          "watering": "Regando"
+        }
+      },
+      "temperature": {
+        "name": "Temperatura"
+      },
+      "token_remaining": {
+        "name": "Token restante"
+      }
+    },
+    "switch": {
+      "enabled": {
+        "name": "Activar/Desactivar"
+      },
+      "watering": {
+        "name": "Iniciar/Detener riego"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "controller_refresh_interval": "Intervalo de actualización del controlador (en minutos)",
+          "sensor_refresh_interval": "Intervalo de actualización del sensor (en minutos)",
+          "watering_duration": "Duración de riego predeterminada (en minutos)"
+        },
+        "data_description": {
+          "controller_refresh_interval": "Intervalo para actualizar los datos del controlador y zonas desde la nube",
+          "sensor_refresh_interval": "Intervalo para actualizar los datos del sensor desde la nube",
+          "watering_duration": "Duración de riego predeterminada sugerida al iniciar el riego manualmente"
+        },
+        "sections": {
+          "advanced": {
+            "data": {
+              "default_watering_delay": "Retraso antes de que comience el riego (en segundos)",
+              "delay_before_refresh": "Tiempo de espera antes de actualizar los datos (en segundos)",
+              "months_after_schedules": "Meses después de hoy para obtener programaciones",
+              "months_before_schedules": "Meses antes de hoy para obtener programaciones",
+              "sensor_value_days_before_today": "Días atrás para obtener el valor del sensor"
+            },
+            "data_description": {
+              "default_watering_delay": "Retraso definido por el usuario antes de que comience el riego",
+              "delay_before_refresh": "Tiempo de espera antes de obtener retroalimentación del estado desde la nube después de una acción (p. ej., iniciar riego)",
+              "months_after_schedules": "Número de meses a futuro para incluir en las programaciones",
+              "months_before_schedules": "Número de meses en el pasado para incluir en las programaciones",
+              "sensor_value_days_before_today": "Usar datos de días anteriores si el sensor de suelo no se actualiza diariamente"
+            },
+            "description": "Consulte la documentación antes de cambiar estas opciones.",
+            "name": "Opciones avanzadas"
+          }
+        },
+        "title": "Opciones de riego Netro"
+      }
+    }
+  },
+  "services": {
+    "disable": {
+      "description": "Desactivar el controlador seleccionado",
+      "name": "Desactivar"
+    },
+    "enable": {
+      "description": "Activar el controlador seleccionado",
+      "name": "Activar"
+    },
+    "no_water": {
+      "description": "Suspender el riego durante un número determinado de días en el controlador especificado",
+      "fields": {
+        "config_entry_id": {
+          "description": "La entrada de configuración cuyo controlador se pondrá en modo sin riego",
+          "name": "Entrada de configuración"
+        },
+        "days": {
+          "description": "Número de días consecutivos sin riego",
+          "name": "Días"
+        }
+      },
+      "name": "Sin riego"
+    },
+    "refresh_data": {
+      "description": "Actualizar datos de los dispositivos Netro (controlador, zona, sensores) desde la nube",
+      "fields": {
+        "config_entry_id": {
+          "description": "La entrada de configuración cuyos dispositivos deben actualizarse",
+          "name": "Entrada de configuración"
+        }
+      },
+      "name": "Actualizar datos"
+    },
+    "report_weather": {
+      "description": "Esto sirve para reportar datos meteorológicos, reemplazando los datos predeterminados del sistema",
+      "fields": {
+        "condition": {
+          "description": "Condición meteorológica",
+          "name": "Condición"
+        },
+        "config_entry_id": {
+          "description": "La entrada de configuración cuyos datos meteorológicos deben informarse",
+          "name": "Entrada de configuración"
+        },
+        "date": {
+          "description": "Fecha meteorológica, no puede ser anterior a ayer",
+          "name": "Fecha"
+        },
+        "humidity": {
+          "description": "Humedad, en el rango de [0,100]",
+          "name": "Humedad"
+        },
+        "pressure": {
+          "description": "Presión atmosférica, en la unidad de hPa",
+          "name": "Presión"
+        },
+        "rain": {
+          "description": "Cantidad de lluvia (valor flotante en mm)",
+          "name": "Lluvia"
+        },
+        "rain_prob": {
+          "description": "Probabilidad de lluvia, en el rango de [0,100]",
+          "name": "Probabilidad de lluvia"
+        },
+        "t_dew": {
+          "description": "Temperatura del punto de rocío, en grados Celsius",
+          "name": "Temperatura de rocío"
+        },
+        "t_max": {
+          "description": "Temperatura máxima, en grados Celsius",
+          "name": "Temperatura máxima"
+        },
+        "t_min": {
+          "description": "Temperatura mínima, en grados Celsius",
+          "name": "Temperatura mínima"
+        },
+        "temp": {
+          "description": "Temperatura media, en grados Celsius",
+          "name": "Temperatura media"
+        },
+        "wind_speed": {
+          "description": "Velocidad del viento, unidad en m/s",
+          "name": "Velocidad del viento"
+        }
+      },
+      "name": "Reportar clima"
+    },
+    "set_moisture": {
+      "description": "Establecer un valor de humedad en una zona, una forma de proporcionar a Netro el valor de un sensor externo",
+      "fields": {
+        "moisture": {
+          "description": "El valor de humedad que se aplicará a la zona (en %)",
+          "name": "Humedad"
+        },
+        "zone_id": {
+          "description": "La zona cuya humedad debe establecerse",
+          "name": "Zona"
+        }
+      },
+      "name": "Establecer humedad"
+    },
+    "start_watering": {
+      "description": "Iniciar riego por una duración especificada, con un retraso opcional o una fecha/hora específicas",
+      "fields": {
+        "delay": {
+          "description": "Tiempo de espera antes de iniciar el riego",
+          "name": "Retraso"
+        },
+        "duration": {
+          "description": "Duración de activación de este aspersor",
+          "name": "Duración"
+        },
+        "start_time": {
+          "description": "Fecha y hora de inicio del riego",
+          "name": "Hora de inicio"
+        }
+      },
+      "name": "Iniciar riego"
+    },
+    "stop_watering": {
+      "description": "Detener el riego de todas las zonas a la vez o de una zona específica",
+      "name": "Detener riego"
+    }
+  }
+}
