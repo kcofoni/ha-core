@@ -12,7 +12,10 @@
     git -C ${containerWorkspaceFolder} config gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers && \
     src=\"${containerWorkspaceFolder}/config/custom_components/netro_watering\" && \
     dst=\"${containerWorkspaceFolder}/homeassistant/components/netro_watering\" && \
-    ln -sfn \"$src\" \"$dst\"; \
+    ln -sfn \"$src\" \"$dst\" && \
+    mkdir -p \"${containerWorkspaceFolder}/.claude\" && \
+    rm -rf ~/.claude && \
+    ln -sfn \"${containerWorkspaceFolder}/.claude\" ~/.claude; \
   '",
   "postStartCommand": "script/bootstrap",
   "containerEnv": {
