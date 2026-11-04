@@ -17,7 +17,8 @@
     ln -sfn \"$src\" \"$dst\" && \
     mkdir -p \"${containerWorkspaceFolder}/.claude\" && \
     rm -rf ~/.claude && \
-    ln -sfn \"${containerWorkspaceFolder}/.claude\" ~/.claude; \
+    ln -sfn \"${containerWorkspaceFolder}/.claude\" ~/.claude && \
+    claude mcp add --transport sse pmwiki http://vmdocker:3010/sse; \
   '",
   "postStartCommand": "script/bootstrap",
   "containerEnv": {
